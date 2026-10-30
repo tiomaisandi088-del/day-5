@@ -1,0 +1,398 @@
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #334155;
+  background-color: #f1f5f9;
+  line-height: 1.6;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+/* =========================
+   2. HEADER
+========================= */
+
+.header {
+  background-color: #0f172a;
+  color: white;
+  padding: 24px 5%;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.header h1 {
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.header p {
+  margin-bottom: 0;
+  color: #cbd5e1;
+}
+
+.header-label {
+  padding: 7px 12px;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+/* =========================
+   3. KONTEN UTAMA
+========================= */
+
+.container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 28px auto;
+}
+
+/* =========================
+   4. KARTU RINGKASAN
+========================= */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  padding: 22px;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 3px 8px rgb(15 23 42 / 4%);
+}
+
+.summary-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.summary-card h2 {
+  margin-bottom: 0;
+  font-size: 26px;
+  overflow-wrap: anywhere;
+}
+
+.summary-card.blue {
+  border-left: 5px solid #2563eb;
+}
+
+.summary-card.green {
+  border-left: 5px solid #16a34a;
+}
+
+.summary-card.purple {
+  border-left: 5px solid #9333ea;
+}
+
+/* =========================
+   5. PANEL
+========================= */
+
+.panel {
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgb(15 23 42 / 4%);
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin-bottom: 4px;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.section-heading p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   6. FORM
+========================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label,
+.search-box label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: white;
+  color: #0f172a;
+}
+
+.form-group input:focus,
+.search-box input:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+/* =========================
+   7. TOMBOL
+========================= */
+
+.btn {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.form-message {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+
+.form-message.success {
+  color: #15803d;
+}
+
+.form-message.error {
+  color: #b91c1c;
+}
+
+/* =========================
+   8. PENCARIAN
+========================= */
+
+.table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+
+.search-box {
+  width: 280px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* =========================
+   9. TABEL
+========================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background-color: #f8fafc;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+th {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+td {
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.empty-row {
+  padding: 28px;
+  text-align: center;
+  color: #64748b;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge.aman {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge.menipis {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge.habis {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.table-info {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================
+   10. FOOTER
+========================= */
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================
+   11. RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .header-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .table-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+/* =========================
+   12. RESPONSIVE PONSEL
+========================= */
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+    margin: 16px auto;
+  }
+
+  .header {
+    padding: 20px 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .summary-card {
+    padding: 18px;
+  }
+
+  .summary-card h2 {
+    font-size: 23px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}

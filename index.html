@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aplikasi InventarisKu</title>
+
+  <!-- Menghubungkan file CSS -->
+  <link rel="stylesheet" href="style-inventaris.css">
+
+  <!-- Menghubungkan file JavaScript -->
+  <script src="script-inventaris.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <div>
+        <h1>InventarisKu</h1>
+        <p>Aplikasi Pengelolaan Data Inventaris</p>
+      </div>
+
+      <span class="header-label">Junior Web Developer</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Ringkasan inventaris -->
+    <section class="summary">
+      <article class="summary-card blue">
+        <p>Total Jenis Barang</p>
+        <h2 id="totalJenis">0</h2>
+      </article>
+
+      <article class="summary-card green">
+        <p>Total Unit Stok</p>
+        <h2 id="totalStok">0</h2>
+      </article>
+
+      <article class="summary-card purple">
+        <p>Total Nilai Inventaris</p>
+        <h2 id="totalNilai">Rp0</h2>
+      </article>
+    </section>
+
+    <!-- Form tambah barang -->
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Tambah Barang</h2>
+          <p>Masukkan informasi barang baru.</p>
+        </div>
+      </div>
+
+      <form id="formBarang">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="kode">Kode Barang</label>
+            <input
+              type="text"
+              id="kode"
+              placeholder="Contoh: INV-005"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="nama">Nama Barang</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Contoh: Printer"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="stok">Jumlah Stok</label>
+            <input
+              type="number"
+              id="stok"
+              min="0"
+              step="1"
+              placeholder="Contoh: 10"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="harga">Harga Satuan (Rp)</label>
+            <input
+              type="number"
+              id="harga"
+              min="0"
+              step="1"
+              placeholder="Contoh: 1500000"
+              required
+            >
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          + Tambah Barang
+        </button>
+
+        <p id="pesanForm" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Tabel inventaris -->
+    <section class="panel">
+      <div class="section-heading table-heading">
+        <div>
+          <h2>Daftar Inventaris</h2>
+          <p>Data barang yang tercatat dalam aplikasi.</p>
+        </div>
+
+        <div class="search-box">
+          <label for="cariBarang">Cari barang</label>
+          <input
+            type="search"
+            id="cariBarang"
+            placeholder="Cari kode atau nama..."
+          >
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Kode</th>
+              <th>Nama Barang</th>
+              <th>Stok</th>
+              <th>Harga Satuan</th>
+              <th>Nilai Stok</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelBarang">
+            <!-- Baris tabel dibuat oleh JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="infoHasil" class="table-info"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>InventarisKu &copy; 2026 | Praktik Dasar JavaScript</p>
+  </footer>
+
+</body>
+</html>
